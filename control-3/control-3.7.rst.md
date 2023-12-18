@@ -24,34 +24,23 @@ occur that could impact this Safeguard.
 
 # Operations
 
-1.  
+1. Check if the enterprise has a data classification scheme (Input 1):
 
-    Check if the enterprise has a data classification scheme (Input 1).
+    1. If Input 1 exists, M = 1
+    2. Otherwise M1 = 0
 
-    :   1.  If Input 1 exists M = 1
-        2.  Otherwise M1 = 0
+2. Using `GV17`, determine if the enterprise has a way to categorize the type of data within the classification scheme:
 
-2.  
+    1. Enumerate the sensitivity types that are included in the classification scheme (M2)
+    2. Enumerate the sensitivity types that are not included in the classification scheme (M3)
 
-    Using :code:\`GV17\`determine if the enterprise has a way to categorize the type of data within the classification scheme
+3. Compare `GV12` and Input 1:
 
-    :   1.  Enumerate the sensitivity types that are included in the
-            classification scheme (M2)
-        2.  Enumerate the sensitivity types that are not included in the
-            classification scheme (M3)
+    1. Identify and enumerate data that contains an accurate classification per the classification scheme (M4)
+    2. Identify and enumerate data that does not contain a classification or contains an inaccurate classification per the classification scheme (M5)
 
-3.  
+4. Compare the current date to that provided in Input 4. Note the timeframe in months (M8)
 
-    Compare `GV12` and Input 1
-
-    :   1.  Identify and enumerate data that contains an accurate
-            classification per the classification scheme (M4)
-        2.  Identify and enumerate data that does not contain a
-            classsification or contains an innaccurate classification
-            per the classification scheme (M5)
-
-4.  Compare the current date to that provided in Input 4. Note the
-    timeframe in months. (M8)
 
 # Measures
 
