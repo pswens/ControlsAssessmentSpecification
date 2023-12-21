@@ -1,64 +1,48 @@
-12.6: Use of Secure Network Management and Communication Protocols 
-========================================================= Use secure
-network management and communication protocols (e.g., 802.1X, Wi-Fi
+## 12.6: Use of Secure Network Management and Communication Protocols 
+
+Use secure network management and communication protocols (e.g., 802.1X, Wi-Fi
 Protected Access 2 (WPA2) Enterprise or greater).
 
-  Asset Type   Security Function   Implementation Groups
-  ------------ ------------------- -----------------------
-  Network      Protect             2, 3
+| Asset Type   | Security Function   | Implementation Groups |
+| ------------ | ------------------- | --------------------- |
+| Network      | Protect             | 2, 3                  |
 
-# Dependencies
+### Dependencies
 
 -   Safeguard 4.2: Establish and Maintain a Secure Configuration Process
     for Network Infrastructure
 -   Safeguard 12.2: Establish and Maintain a Secure Network Architecture
 
-# Inputs
+### Inputs
 
 1.  `GV36`: Segments within the enterprise network
 2.  `GV37`: Network infrastructure configuration standards
 3.  Authorized list of secure network management and communication
     protocols
 
-# Operations
+### Operations
 
-1.  
+1.  For each network segment in Input 1 `GV36`, use Input 3 to identify communication protocols
 
-    For each network segment in Input 1 `GV36`, use Input 3 to identify communication protocols
+    1.  Identify and enumerate segments using only communication protocols on the authorized list (M2)
+    2.  Identify and enumerate segments using communication protocols not on the authorized list (M3)
 
-    :   1.  Identify and enumerate segments using only communication
-            protocols on the authorized list (M2)
-        2.  Identify and enumerate segments using communication
-            protocols not on the authorized list (M3)
+2.  For each communication protocol identified in Operation 1.1, check configuration standards `GV37`
 
-2.  
+    1.  Identify and enumerate segments using properly configured communication protocols (M4)
+    2.  Identify and enumerate segments using improperly configured communication protocols (M5)
 
-    For each communication protocol identified in Operation 1.1, check configuration standards `GV37`
+3.  For each network segment in Input 1 `GV36`, use Input 3 to identify network management protocols
 
-    :   1.  Identify and enumerate segments using properly configured
-            communication protocols (M4)
-        2.  Identify and enumerate segments using improperly configured
-            communication protocols (M5)
+    1.  Identify and enumerate segments using only network management protocols on the authorized list (M6)
+    2.  Identify and enumerate segments using network management protocols not on the authorized list (M7)
 
-3.  
+4.  For each communication protocol identified in Operation 1.1, check configuration standards `GV37`
 
-    For each network segment in Input 1 `GV36`, use Input 3 to identify network management protocols
+   1.  Identify and enumerate segments using properly configured network management protocols (M8)
+   2.  Identify and enumerate segments using improperly configured network management protocols (M9)
 
-    :   1.  Identify and enumerate segments using only network
-            management protocols on the authorized list (M6)
-        2.  Identify and enumerate segments using network management
-            protocols not on the authorized list (M7)
-
-4.  
-
-    For each communication protocol identified in Operation 1.1, check configuration standards `GV37`
-
-    :   1.  Identify and enumerate segments using properly configured
-            network management protocols (M8)
-        2.  Identify and enumerate segments using improperly configured
-            network management protocols (M9)
-
-# Measures
+### Measures
 
 -   M1 = Count of `GV36`
 -   M2 = Count of segments using authorized communication protocols
@@ -76,20 +60,18 @@ Protected Access 2 (WPA2) Enterprise or greater).
 -   M9 = Count of segments using improperly configured authorized
     network management protocols
 
-# Metrics
+### Metrics
 
-Communication Protocol Coverage \^\^\^\^\^\^\^\^ .. list-table:
+#### Communication Protocol Coverage
 
-    * - **Metric**
-      - | The percentage of network segments using properly configured 
-      - | and authorized communication protocols
-    * - **Calculation**
-      - :code:`M4 / M1`
+| **Metric**      | The percentage of network segments using properly configured and authorized communication protocols |
+|-----------------|------------------------------------------------------------------------------------------------------|
+| **Calculation** | `M4 / M1`                                                                                            |
 
-Network Managememt Protocol Coverage \^\^\^\^\^\^\^\^ .. list-table:
 
-    * - **Metric**
-      - | The percentage of network segments using properly configured 
-      - | and authorized network management protocols
-    * - **Calculation**
-      - :code:`M8 / M1`
+#### Network Management Protocol Coverage
+
+| **Metric**      | The percentage of network segments using properly configured and authorized network management protocols|
+|-----------------|---------------------------------------------------------------------------------------------------------|
+| **Calculation** | `M8 / M1`                                                                                               |
+
