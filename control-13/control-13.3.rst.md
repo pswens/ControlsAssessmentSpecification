@@ -1,42 +1,38 @@
-# 13.3: Deploy a Network Intrusion Detection Solution
+## 13.3: Deploy a Network Intrusion Detection Solution
 
 Deploy a network intrusion detection solution on enterprise assets,
 where appropriate. Example implementations include the use of a Network
 Intrusion Detection System (NIDS) or equivalent cloud service provider
 (CSP) service.
 
-  Asset Type   Security Function   Implementation Groups
-  ------------ ------------------- -----------------------
-  Network      Detect              2, 3
+| Asset Type   | Security Function   | Implementation Groups |
+| ------------ | ------------------- | --------------------- |
+| Network      | Detect              | 2, 3                  |
 
-## Dependencies
+### Dependencies
 
 -   Safeguard 1.1: Establish and Maintain Detailed Enterprise Asset
     Inventory
 -   Safeguard 12.4: Establish and Maintain Architecture Diagram(s)
 
-## Inputs
+### Inputs
 
 1.  `GV35`: Assets that are part of the network infrastructure
 2.  `GV4`: Enterprise Network Architecture Documentation
 
-## Operations
+### Operations
 
 1.  Use Input 1 `GV35` to identify the network intrusion detection
     solutions for the enterprise
 
 2.  Use Input 2 `GV4` to identify and enumerate network boundaries (M1)
 
-3.  
+3.  For each network boundary identified in Operation 2, determine whether it is covered by at least one network intrusion detection solution
 
-    For each network boundary identified in Operation 2, determine whether it is covered by at least one network intrusion detection solution
+    1.  Identify and enumerate boundaries covered by at least one network intrusion detection solution (M2)
+    2.  Identify and enumerate boundaries not covered by at least one network intrusion detection solution (M3)
 
-    :   1.  Identify and enumerate boundaries covered by at least one
-            network intrusion detection solution (M2)
-        2.  Identify and enumerate boundaries not covered by at least
-            one network intrusion detection solution (M3)
-
-## Measures
+### Measures
 
 -   M1 = Count of network boundaries
 -   M2 = Count of network boundaries covered by a network intrusion
@@ -44,15 +40,11 @@ Intrusion Detection System (NIDS) or equivalent cloud service provider
 -   M3 = Count of network boundaries not covered by a network intrusion
     detection solution
 
-## Metrics
+### Metrics
 
-### Coverage
+#### Coverage
 
-+-----------------+------------------------+-----------------------+
-| **Metric**      | | The percentage of    | | detection solutions |
-|                 |   network boundaries   |                       |
-|                 |   covered by network   |                       |
-|                 |   intrusion            |                       |
-+-----------------+------------------------+-----------------------+
-| **Calculation** | `M2 / M1`              |                       |
-+-----------------+------------------------+-----------------------+
+| **Metric**      | The percentage of network boundaries covered by network intrusion detection solutions |
+|-----------------|---------------------------------------------------------------------------------------------|
+| **Calculation** | `M2 / M1`                                                                                   |
+
