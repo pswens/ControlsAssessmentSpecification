@@ -43,7 +43,8 @@ access:
 5.  If the enterprise does not use 802.1x network design to control network
 access:
 
-    1. For each asset in Input 4 `GV35`, use Inp;ut 5 `GV37` to check client authentication certificate configuration
+    1. For each asset in Input 4 `GV35`, use Input 5 `GV37` to check client authentication certificate configuration
+
         1.  Identify and enumerate properly configured assets (M8)
         2.  Identify and enumerate improperly configured assets (M9)
 
