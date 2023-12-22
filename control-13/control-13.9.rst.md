@@ -1,19 +1,19 @@
-# 13.9: Deploy Port-Level Access Control
+## 13.9: Deploy Port-Level Access Control
 
 Deploy port-level access control. Port-level access control utilizes
 802.1x, or similar network access control protocols, such as
 certificates, and may incorporate user and/or device authentication.
 
-  Asset Type   Security Function   Implementation Groups
-  ------------ ------------------- -----------------------
-  Devices      Protect             3
+| Asset Type   | Security Function   | Implementation Groups |
+| ------------ | ------------------- | --------------------- |
+| Devices      | Protect             | 3                     |
 
-## Dependencies
+### Dependencies
 
 -   Safeguard 1.1: Establish and Maintain Detailed Enterprise Asset
     Inventory
 
-## Inputs
+### Inputs
 
 1.  `GV5`: Authorized Software Inventory
 2.  `GV38`: AAA services within the enterprise
@@ -21,45 +21,33 @@ certificates, and may incorporate user and/or device authentication.
 4.  `GV35`: Assets that are part of the network infrastructure
 5.  `GV37`: Network infrastructure configuration standards
 
-## Operations
+### Operations
 
-If the enterprise uses an 802.1x network design to control network
+1.  If the enterprise uses an 802.1x network design to control network
 access:
 
-1.  Use Input 1 `GV5` to identify and enumerate 802.1x authenticators
-    (M1)
+    1. Use Input 1 `GV5` to identify and enumerate 802.1x authenticators
 
-2.  
+2.  For each authenticator identified in Operation 1, use Input 5 `GV37` to check configurations
 
-    For each authenticator identified in Operation 1, use Input 5 :code:\`GV37\`to check configurations
-
-    :   1.  Identify and enumerate properly configured authenticators
-            (M2)
-        2.  Identify and enumerate improperly configured authenticators
-            (M3)
+    1.  Identify and enumerate properly configured authenticators (M2)
+    2.  Identify and enumerate improperly configured authenticators (M3)
 
 3.  Use Input 2 `GV38` to identify 802.1x authentication servers (M4)
 
-4.  
+4.  For each authentication server identified in Operation 3, use Input 5 `` GV37`to check configurations to ensure a connection to at least one CMDB server from Input 3:code:`GV41 ``
 
-    For each authentication server identified in Operation 3, use Input 5 `` GV37`to check configurations to ensure a connection to at least one CMDB server from Input 3 :code:`GV41 ``
+    1.  Identify and enumerate properly configured authentication servers (M5)
+    2.  Identify and enumerate improperly configured authentication servers (M6)
 
-    :   1.  Identify and enumerate properly configured authentication
-            servers (M5)
-        2.  Identify and enumerate improperly configured authentication
-            servers (M6)
-
-If the enterprise does not use 802.1x network design to control network
+5.  If the enterprise does not use 802.1x network design to control network
 access:
 
-1.  
-
-    For each asset in Input 4 `GV35`, use Inp;ut 5 `GV37` to check client authentication certificate configuration
-
-    :   1.  Identify and enumerate properly configured assets (M8)
+    1. For each asset in Input 4 `GV35`, use Inp;ut 5 `GV37` to check client authentication certificate configuration
+        1.  Identify and enumerate properly configured assets (M8)
         2.  Identify and enumerate improperly configured assets (M9)
 
-## Measures
+### Measures
 
 -   M1 = Count of 802.1x authenticators
 -   M2 = Count of 802.1x properly configured authenticators
@@ -73,33 +61,30 @@ access:
 -   M9 = Count of assets improperly configured for client authentication
     certificates
 
-## Metrics
+### Metrics
 
 If the enterprise uses an 802.1x network design to control network
 access:
 
-Authenticator Coverage \^\^\^\^\^\^\^\^ .. list-table:
+#### Authenticator Coverage 
 
-    * - **Metric**
-      - | The  percentage of properly configured authenticator
-    * - **Calculation**
-      - :code:`M2 / M1`
+| **Metric**      | The percentage of properly configured authenticators |
+|-----------------|----------------------------------------------------|
+| **Calculation** | `M2 / M1`                                          |
 
-Authentication Server Coverage \^\^\^\^\^\^\^\^ .. list-table:
+#### Authentication Server Coverage
 
-    * - **Metric**
-      - | The  percentage of properly configured authentication servers
-    * - **Calculation**
-      - :code:`M5 / M4`
+| **Metric**      | The percentage of properly configured authentication servers |
+|-----------------|----------------------------------------------------------|
+| **Calculation** | `M5 / M4`                                                |
+
 
 If the enterprise does not use 802.1x network design to control network
 access:
 
-Client Authentication Certificate Coverage \^\^\^\^\^\^\^\^ ..
-list-table:
+#### Client Authentication Certificate Coverage
 
-    * - **Metric**
-      - | The percentage of assets properly configured for authentication 
-      - | certificate coverage
-    * - **Calculation**
-      - :code:`M8 / M7`
+| **Metric**      | The percentage of assets properly configured for authentication certificate coverage |
+|-----------------|-----------------------------------------------------------------------------------------|
+| **Calculation** | `M8 / M7`                                                                               |
+
