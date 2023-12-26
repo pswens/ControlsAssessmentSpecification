@@ -1,7 +1,7 @@
-16.11: Leverage Vetted Modules or Services for Application Security
-Components =========================================================
-Leverage vetted modules or services for application security components,
-such as identity management, encryption, and auditing and logging. Using
+## 16.11: Leverage Vetted Modules or Services for Application Security
+
+Components Leverage vetted modules or services for application security components,
+such as identity management, encryption, auditing, and logging. Using
 platform features in critical security functions will reduce developers'
 workload and minimize the likelihood of design or implementation errors.
 Modern operating systems provide effective mechanisms for
@@ -11,42 +11,34 @@ accepted, and extensively reviewed encryption algorithms. Operating
 systems also provide mechanisms to create and maintain secure audit
 logs.
 
-  Asset Type     Security Function   Implementation Groups
-  -------------- ------------------- -----------------------
-  Applications   Protect             2, 3
+| Asset Type     | Security Function   | Implementation Groups |
+| -------------- | ------------------- | --------------------- |
+| Applications   | Protect             | 2, 3                  |
 
-# Dependencies
+### Dependencies
 
 -   Safeguard 2.1: Establish and Maintain a Software Inventory
 
-# Inputs
+### Inputs
 
 1.  `GV5`: Authorized Software Inventory
 
-# Operations
+### Operations
 
 1.  Use Input 1 `GV5` to identify and enumerate application security
     components (M1)
 
-2.  
+2.  For each application security component identified in Operation 1, determine whether custom code exists
 
-    For each application security component identifed in Operation 1, determine whether custom code exists
+    1.  Identify and enumerate components that contain custom code (M2)
+    2.  Identify and enumerate components that do not contain custom code (M3)
 
-    :   1.  Identify and enumerate components that contain custom code
-            (M2)
-        2.  Identify and enumerate components that do not contain custom
-            code (M3)
+3.  For each application security component identified in Operation 2.1, determine whether vetted modules or services exist
 
-3.  
+    1.  Identify and enumerate components for which vetted modules or services exist (M4)
+    2.  Identify and enumerate components for which vetted modules or services do not exist (M5)
 
-    For each application security component identifed in Operation 2.1, determine whether vetted modules or services exist
-
-    :   1.  Identify and enumerate components for which vetted modules
-            or services exist (M4)
-        2.  Identify and enumerate components for which vetted modules
-            or services do not exist (M5)
-
-# Measures
+### Measures
 
 -   M1 = Count of application security components
 -   M2 = Count of application security components containing custom code
@@ -57,14 +49,11 @@ logs.
 -   M5 = Count of application security components containing custom code
     and vetted modules or services do not exist
 
-# Metrics
+### Metrics
 
-## Compliance
+#### Compliance
 
-+-----------------+---------------------------------------------------+
-| **Metric**      | | The percentage of application security          |
-|                 |   components using vetted modules                 |
-|                 | | or services when available                      |
-+-----------------+---------------------------------------------------+
-| **Calculation** | `(M3 + M5) / M1`                                  |
-+-----------------+---------------------------------------------------+
+| **Metric**      | The percentage of application security components using vetted modules or services when available |
+|-----------------|--------------------------------------------------------------------------------------------------|
+| **Calculation** | `(M3 + M5) / M1`                                                                                 |
+
