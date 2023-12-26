@@ -1,8 +1,8 @@
-16.3: Perform Root Cause Analysis on Security Vulnerabilities
-========================================================= Perform root
-cause analysis on security vulnerabilities. When reviewing
+## 16.3: Perform Root Cause Analysis on Security Vulnerabilities
+
+Perform root cause analysis on security vulnerabilities. When reviewing
 vulnerabilities, root cause analysis is the task of evaluating
-underlying issues that create vulnerabilities in code, and allows
+underlying issues that create vulnerabilities in code and allows
 development teams to move beyond just fixing individual vulnerabilities
 as they arise.
 
@@ -10,7 +10,7 @@ as they arise.
   -------------- ------------------- -----------------------
   Applications   Protect             2, 3
 
-# Dependencies
+### Dependencies
 
 -   Safeguard 16.2: Establish and Maintain a Process to Accept and
     Address Software Vulnerabilities
