@@ -1,28 +1,28 @@
-# 18.9: Separate Production and Non-Production Systems
+## 18.9: Separate Production and Non-Production Systems
 
 Maintain separate environments for production and non-production
 systems. Developers should not have unmonitored access to production
 environments.
 
-  Asset Type   Security Function   Implementation Groups
-  ------------ ------------------- -----------------------
-  N/A          N/A                 2, 3
+| Asset Type   | Security Function   | Implementation Groups |
+| ------------ | ------------------- | --------------------- |
+| N/A          | N/A                 | 2, 3                  |
 
-## Dependencies
+### Dependencies
 
 -   Sub-control 1.4: Maintain Detailed Asset Inventory
 -   Sub-control 1.5: Maintain Asset Inventory Information
 -   Sub-control 2.1: Maintain Inventory of Authorized Software
 -   Sub-control 2.5: Integrate Software and Hardware Asset Inventories
 
-## Inputs
+### Inputs
 
 1.  The inventory of systems used for production and non-production
     deployments
 2.  The inventory of user accounts
 3.  The mechanism for monitoring user account access to systems
 
-## Operations
+### Operations
 
 1.  From Input 1, categorize the deployments of systems into those with
     production deployments and those with non-production deployments.
@@ -32,7 +32,7 @@ environments.
 2.  From Input 2, determine the list of user accounts with access to
     production environments
 
-## Measures
+### Measures
 
 -   M1(i) = (For each system with a production deployment \"i\") 1 if at
     least one non-production deployment environment exists for that
@@ -43,24 +43,16 @@ environments.
 -   M4 = Count of user accounts with access to production environments
     (the count from Operation 2).
 
-## Metrics
+### Metrics
 
-### Environment Coverage
+#### Environment Coverage
 
-+-----------------+---------------------------------------------------+
-| **Metric**      | | The ratio of production systems where at least  |
-|                 |   one non-production deployment exists            |
-|                 | | to the total number of production systems       |
-+-----------------+---------------------------------------------------+
-| **Calculation** | `(SUM from i=1..M2 (M1(i))) / M2`                 |
-+-----------------+---------------------------------------------------+
+| **Metric**      | The ratio of production systems where at least one non-production deployment exists to the total number of production systems |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------|
+| **Calculation** | `(SUM from i=1..M2 (M1(i))) / M2`                                                                                         |
 
-### Monitored Account Coverage
+#### Monitored Account Coverage
 
-+-----------------+---------------------------------------------------+
-| **Metric**      | | The ratio of accounts with production system    |
-|                 |   access that are monitored to the total          |
-|                 | | accounts with production system access          |
-+-----------------+---------------------------------------------------+
-| **Calculation** | `M3 / M4`                                         |
-+-----------------+---------------------------------------------------+
+| **Metric**      | The ratio of accounts with production system access that are monitored to the total accounts with production system access |
+|-----------------|-----------------------------------------------------------------------------------------------------------------------------|
+| **Calculation** | `M3 / M4`                                                                                                                   |
