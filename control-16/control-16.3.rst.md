@@ -6,46 +6,37 @@ underlying issues that create vulnerabilities in code and allows
 development teams to move beyond just fixing individual vulnerabilities
 as they arise.
 
-  Asset Type     Security Function   Implementation Groups
-  -------------- ------------------- -----------------------
-  Applications   Protect             2, 3
+| Asset Type     | Security Function   | Implementation Groups |
+| -------------- | ------------------- | --------------------- |
+| Applications   | Protect             | 2, 3                  |
 
 ### Dependencies
 
 -   Safeguard 16.2: Establish and Maintain a Process to Accept and
     Address Software Vulnerabilities
 
-# Inputs
+### Inputs
 
 1.  Root Cause Analysis Process
 2.  Vulnerabilities addressed over the last twelve months
 
-# Operations
+### Operations
 
-1.  
+1.  Determine whether Input 1 exists within the enterprise
 
-    Determine whether Input 1 exists within the enterprise
+    1.  If Input 1 exists, M1 = 1
+    2.  If Input 1 does not exist, M1 = 0
 
-    :   1.  If Input 1 exists, M1 = 1
-        2.  If Input 1 does not exist, M1 = 0
+2.  Review Input 1 and determine whether it includes, at a minimum, the following components: categorization of vulnerabilities, guidance for how lessons learned are incorporated into the development process
 
-2.  
+    1.  For each component included in the process, assign a value of 1. Sum all values. (M2)
 
-    Review Input 1 and dermine whether it includes, at a minimum, the following components: categorization of vulnerabilities, guidance for how lessons learned are incorporated into the development process
+3.  For each vulnerability addressed over the last twelve months, assess whether the root cause analysis process was followed
 
-    :   1.  For each component included in the process, assign a value
-            of 1. Sum all values. (M2)
+    1.  Identify and enumerate vulnerabilities for which the process was followed (M4)
+    2.  Identify and enumerate vulnerabilities for which the process was not followed (M5)
 
-3.  
-
-    For each vulnerability addressed over the last twelve months, assess whether the root cause analysis process was followed
-
-    :   1.  Identify and enumerate vulnerabilities for which the process
-            was followed (M4)
-        2.  Identify and enumerate vulnerabilities for which the process
-            was not followed (M5)
-
-# Measures
+### Measures
 
 -   M1 = Output of Operation 1
 -   M2 = Count of components included in the process
@@ -55,23 +46,21 @@ as they arise.
 -   M5 = Count of vulnerabilities for which root cause analysis was not
     conducted
 
-# Metrics
+### Metrics
 
 -   If M1 is 0, this safeguard receives a failing score. The other
     metrics don\'t apply.
 
-Completeness of Process \^\^\^\^\^\^\^\^\^ .. list-table:
+#### Completeness of Process
 
-    * - **Metric**
-      - | The percent of components included in the secure application 
-      - | development process
-    * - **Calculation**
-      - :code:`M2 / 2`
+| **Metric**      | The percentage of components included in the secure application development process |
+|-----------------|-------------------------------------------------------------------------------------|
+| **Calculation** | `M2 / 2`                                                                     |
 
-Compliance \^\^\^\^\^\^\^\^\^ .. list-table:
 
-    * - **Metric**
-      - | The percent of vulnerabilities for which root cause analysis 
-      - | was conducted
-    * - **Calculation**
-      - :code:`M4 / M3`
+#### Compliance
+
+| **Metric**      | The percentage of vulnerabilities for which root cause analysis was conducted |
+|-----------------|-----------------------------------------------------------------------------|
+| **Calculation** | `M4 / M3`                                                             |
+
