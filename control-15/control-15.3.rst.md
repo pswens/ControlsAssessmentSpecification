@@ -1,53 +1,47 @@
-# 15.3: Classify Service Providers
+## 15.3: Classify Service Providers
 
-Classify service providers. Classification consideration may include one
+Classify service providers. Classification considerations may include one
 or more characteristics, such as data sensitivity, data volume,
 availability requirements, applicable regulations, inherent risk, and
-mitigated risk. Update and review classifications annually, or when
+mitigated risk. Update and review classifications annually or when
 significant enterprise changes occur that could impact this Safeguard.
 
-  Asset Type   Security Function   Implementation Groups
-  ------------ ------------------- -----------------------
-  N/A          Identify            2, 3
+| Asset Type   | Security Function   | Implementation Groups |
+| ------------ | ------------------- | --------------------- |
+| N/A          | Identify            | 2, 3                  |
 
-## Dependencies
+
+### Dependencies
 
 -   Safeguard 15.1: Establish and Maintain an Inventory of Service
     Providers
 -   Safeguard 15.2: Establish and Maintain a Service Provider Management
     Policy
 
-## Inputs
+### Inputs
 
 1.  `GV44`: Service Provider Inventory List
 2.  `GV45`: Service Provider Management Policy
 3.  `GV46`: Date of last review or update to service provider inventory
 
-## Operations
+### Operations
 
-1.  
+1. Use Input 2 `GV45` to determine if the enterprise policy includes the classification process of service providers by one or more characteristics
 
-    Use Input 2 `GV45` to determine if the enterprise policy includes classification process of service providers by one or more characteristics
+    1.  If the process exists, M1 = 1
+    2.  If the process does not exist, M1 = 0
 
-    :   1.  If the process exists, M1 = 1
-        2.  If the process does not exist, M1 = 0
+2.  Compare the date of Input 3 `GV46` to the current date and capture timeframe in months (M2)
 
-2.  Compare date of Input 3 `GV46` to current date and capture timeframe
-    in months (M2)
+3.  Review Input 1 `GV45` and determine whether service providers are classified using one or more characteristics per the enterprise\'s policy
 
-3.  
+    1.  Identify and enumerate service providers with an assigned classification (M4)
+    2.  Identify and enumerate service providers without a classification (M5)
 
-    Review Input 1 `GV45` and determine whether service providers are classified using one or more characteristic per the enterprise\'s policy
-
-    :   1.  Identify and enumerate service providers with an assigned
-            classification (M4)
-        2.  Identify and enumerate service providers without a
-            classification (M5)
-
-## Measures
+### Measures
 
 -   M1 = Output of Operation 1
--   M2 = Timeframe since last update or review of service provider
+-   M2 = Timeframe since the last update or review of the service provider
     inventory
 -   M3 = Count of service providers in inventory
 -   M4 = Count of service providers with classification
@@ -62,9 +56,7 @@ significant enterprise changes occur that could impact this Safeguard.
 
 ### Coverage
 
-+-----------------+---------------------------------------------------+
-| **Metric**      | | The percentage of service providers with a      |
-|                 |   classification                                  |
-+-----------------+---------------------------------------------------+
-| **Calculation** | `M4 / M3`                                         |
-+-----------------+---------------------------------------------------+
+| **Metric**      | The percentage of service providers with a classification |
+|-----------------|----------------------------------------------------------|
+| **Calculation** | `M4 / M3`                                                |
+
