@@ -1,49 +1,43 @@
-# 16.8: Separate Production and Non-Production Systems
+## 16.8: Separate Production and Non-Production Systems
 
 Maintain separate environments for production and non-production
 systems.
 
-  Asset Type     Security Function   Implementation Groups
-  -------------- ------------------- -----------------------
-  Applications   Protect             2, 3
+| Asset Type     | Security Function   | Implementation Groups |
+| -------------- | ------------------- | --------------------- |
+| Applications   | Protect             | 2, 3                  |
 
-## Dependencies
+
+### Dependencies
 
 -   None
 
-## Inputs
+### Inputs
 
 1.  `GV1`: Enterprise Asset Inventory
 
-## Operations
+### Operations
 
-1.  Use Input 1 `GV1` to identify and enumerate productions systems (M1)
+1.  Use Input 1 `GV1` to identify and enumerate production systems (M1)
 
-2.  
+2.  For each production system identified in Operation 1, use Input 1 `GV1` to identify if at least one non-production system exists for the system
 
-    For each production system identified in Operation 1, use Input 1 `GV1` to identify if at least one non-production system exists for the system
+    1.  Identify and enumerate production systems with at least one non-production system (M2)
+    2.  Identify and enumerate production systems without a non-production system (M3)
 
-    :   1.  Identify and enumerate productions systems with at least one
-            non-production system (M2)
-        2.  Identify and enumerate productions systems without a
-            non-production system (M3)
-
-## Measures
+### Measures
 
 -   M1 = Count of production systems
 -   M2 = Count of production systems with a non-production system to
     complement
--   M3 = Count of productions systems without a non-production system to
+-   M3 = Count of production systems without a non-production system to
     complement
 
-## Metrics
+### Metrics
 
-### Coverage
+#### Coverage
 
-+-----------------+------------------------+------------------------+
-| **Metric**      | | The percentage of    | | non-production       |
-|                 |   productions systems  |   system               |
-|                 |   with an existing     |                        |
-+-----------------+------------------------+------------------------+
-| **Calculation** | `M2 / M1`              |                        |
-+-----------------+------------------------+------------------------+
+| **Metric**      | The percentage of non-production systems with an existing production system |
+|-----------------|-----------------------------------------------------------------------------|
+| **Calculation** | `M2 / M1`                                                            |
+
