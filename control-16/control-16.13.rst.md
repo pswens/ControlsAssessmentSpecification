@@ -7,9 +7,9 @@ testing. Penetration testing relies on the skill of the tester to
 manually manipulate an application as an authenticated and
 unauthenticated user. 
 
-  Asset Type     Security Function   Implementation Groups
-  -------------- ------------------- -----------------------
-  Applications   Protect             3
+| Asset Type     | Security Function   | Implementation Groups |
+| -------------- | ------------------- | --------------------- |
+| Applications   | Protect             | 3                     |
 
 ### Dependencies
 
