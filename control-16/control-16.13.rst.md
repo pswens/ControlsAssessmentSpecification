@@ -1,4 +1,4 @@
-# 16.13: Conduct Application Penetration Testing
+## 16.13: Conduct Application Penetration Testing
 
 Conduct application penetration testing. For critical applications,
 authenticated penetration testing is better suited to finding business
@@ -11,49 +11,37 @@ unauthenticated user. 
   -------------- ------------------- -----------------------
   Applications   Protect             3
 
-## Dependencies
+### Dependencies
 
 -   Safeguard 2.1: Establish and Maintain a Software Inventory
 
-## Inputs
+### Inputs
 
 1.  `GV5`: Authorized Software Inventory
 2.  Application Penetration Process for enterprise
 
-## Operations
+### Operations
 
-1.  
+1. Determine whether Input 2 exists for the enterprise
 
-    Determine whether Input 2 exists for the enterprise
+    1.  If the process exists, M1 = 1
+    2.  If the process does not exist, M1 = 0
 
-    :   1.  If the process exists, M1 = 1
-        2.  If the process does not exist, M1 = 0
+2.  Use Input 1 `GV5` to identify and enumerate all applications within the enterprise (M2)
 
-2.  Use Input 1 `GV5` to identify and enumerate all applications within
-    the enterprise (M2)
+3.  For each application identified in Operation 2, determine whether an unauthenticated penetration test has been conducted per the process outlined in Input 2
 
-3.  
+    1.  Identify and enumerate applications that have been tested (M3)
+    2.  Identify and enumerate applications that have not been tested (M4)
 
-    For each application identified in Operation 2, determine whether an unauthenticated penentration test has been conducted per the process outlined in Input 2
+4.  Use the output of Operation 2 to identify and enumerate critical applications within the list of applications (M5)
 
-    :   1.  Identify and enumerate applications that have been tested
-            (M3)
-        2.  Identify and enumerate applications that have not been
-            tested (M4)
+5.  For each application identified in Operation 4, determine whether an authenticated penetration test has been conducted per the process outlined in Input 2
 
-4.  Use the output of Operation 2, identify and enumerate critical
-    applications within the list of applications (M5)
+    1.  Identify and enumerate applications that have been tested (M6)
+    2.  Identify and enumerate applications that have not been tested (M7)
 
-5.  
-
-    For each application identified in Operation 4, determine whether an authenticated penentration test has been conducted per the process outlined in Input 2
-
-    :   1.  Identify and enumerate applications that have been tested
-            (M6)
-        2.  Identify and enumerate applications that have not been
-            tested (M7)
-
-## Measures
+### Measures
 
 -   M1 = Output of Operation 1
 -   M2 = Count of applications within the enterprise
@@ -67,25 +55,21 @@ unauthenticated user. 
 -   M7 = Count of critical applications that have not undergone
     authenticated penetration testing per enterprise\'s process
 
-## Metrics
+### Metrics
 
 -   If M1 is 0, this safeguard receives a failing score. The other
     metrics don\'t apply.
 
-Unauthenticated Penetration Testing Coverage
-\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^ .. list-table:
+#### Unauthenticated Penetration Testing Coverage
 
-    * - **Metric**
-      - | The percentage of applications that underwent unauthenticated penetration 
-        | testing per enterprise's process
-    * - **Calculation**
-      - :code:`M3 / M2`
+| **Metric**      | The percentage of applications that underwent unauthenticated penetration testing per enterprise's process |
+|-----------------|-----------------------------------------------------------------------------------------------------------|
+| **Calculation** | `M3 / M2`                                                                                         |
 
-Authenticated Penetration Testing Coverage
-\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^ .. list-table:
 
-    * - **Metric**
-      - | The percentage of critical applications that underwent authenticated penetration 
-        | testing per enterprise's process
-    * - **Calculation**
-      - :code:`M6 / M5`
+#### Authenticated Penetration Testing Coverage
+
+| **Metric**      | The percentage of critical applications that underwent authenticated penetration testing per enterprise's process |
+|-----------------|-----------------------------------------------------------------------------------------------------------------|
+| **Calculation** | `M6 / M5`                                                                                               |
+
