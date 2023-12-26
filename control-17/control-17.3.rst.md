@@ -1,61 +1,53 @@
-17.3: Establish and Maintain an Enterprise Process for Reporting
-Incidents =========================================================
+## 17.3: Establish and Maintain an Enterprise Process for Reporting Incidents
+
 Establish and maintain an enterprise process for the workforce to report
 security incidents. The process includes reporting timeframe, personnel
 to report to, mechanism for reporting, and the minimum information to be
 reported. Ensure the process is publicly available to all of the
-workforce. Review annually, or when significant enterprise changes occur
+workforce. Review annually or when significant enterprise changes occur,
 that could impact this Safeguard.
 
-  Asset Type   Security Function   Implementation Groups
-  ------------ ------------------- -----------------------
-  N/A          Respond             1, 2, 3
+| Asset Type   | Security Function   | Implementation Groups |
+| ------------ | ------------------- | --------------------- |
+| N/A          | Respond             | 1, 2, 3               |
 
-# Dependencies
+### Dependencies
 
 -   None
 
-# Inputs
+### Inputs
 
 1.  `GV51`: Enterprise Incident Response Documentation
 2.  Date of last update or review of the documentation
 
-# Operations
+### Operations
 
-1.  
+1.  Determine whether the enterprise documents process for reporting incidents by reviewing Input 1 `GV51`. Input 1 can be an incident response plan or other documentation.
 
-    Determine whether the enterprise documents process for reporting incidents by reviewing Input 1 `GV51`. Input 1 can be an incident response plan or other documentation.
+    1.  If documentation for reporting incidents exists, M1 = 1
+    2.  If documentation for reporting incidents does not exist, M1 = 0
 
-    :   1.  If documentation for reporting incidents exists, M1 = 1
-        2.  If documentation for reporting incidents does not exist, M1
-            = 0
+2.  Determine whether the documentation, at a minimum, outlines the following components: reporting timeframe, personnel to report to, mechanism for reporting, and the minimum information to be reported
 
-2.  
+    1.  For each component included, assign a value of 1. Sum the values. (M2)
 
-    Determine whether the documentation, at a minimum, outlines the following components: reporting timeframe, personnel to report to, mechanism for reporting, and the minimum information to be reported
+3.  Compare Input 2 to the current date and capture the timeframe in months (M3)
 
-    :   1.  For each component included, assign a value of 1. Sum the
-            values. (M2)
+4.  Determine whether the process documentation is available to the whole workforce
 
-3.  Compare Input 2 to current date and capture timeframe in months (M3)
+    1.  If it is available to all, M4 = 1
+    2.  If it is not available to all, M4 = 0
 
-4.  
-
-    Determine whether the process documentation is available to the whole workforce
-
-    :   1.  If it is available to all, M4 = 1
-        2.  If it is not available to all, M4 = 0
-
-# Measures
+### Measures
 
 -   M1 = Output of Operation 1
 -   M2 = Count of components included for reporting incidents process
     documentation
--   M3 = Timeframe since last update or review of documentation in
+-   M3 = Timeframe since the last update or review of documentation in
     months
 -   M4 = Output of Operation 4
 
-# Metrics
+### Metrics
 
 -   If M1 is 0, this safeguard receives a failing score. The other
     metrics don\'t apply.
@@ -64,10 +56,8 @@ that could impact this Safeguard.
 -   If M4 is 0, this safeguard receives a failing score for this metric.
     Other metrics still apply.
 
-Completeness \^\^\^\^\^\^\^ .. list-table:
+#### Completeness
 
-    * - **Metric**
-      - | The percentage of components included in documentation for 
-        | designated incident handling personnel 
-    * - **Calculation**
-      - :code:`M2 / 4`
+| **Metric**      | The percentage of components included in documentation for designated incident handling personnel |
+|-----------------|--------------------------------------------------------------------------------------------------|
+| **Calculation** | `M2 / 4`                                                                                  |
