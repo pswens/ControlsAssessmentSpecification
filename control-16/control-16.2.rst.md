@@ -16,9 +16,9 @@ Third-party application developers need to consider this an
 externally-facing policy that helps to set expectations for outside
 stakeholders.
 
-  Asset Type     Security Function   Implementation Groups
-  -------------- ------------------- -----------------------
-  Applications   Protect             2, 3
+| Asset Type     | Security Function   | Implementation Groups |
+| -------------- | ------------------- | --------------------- |
+| Applications   | Protect             | 2, 3                  |
 
 ### Dependencies
 
